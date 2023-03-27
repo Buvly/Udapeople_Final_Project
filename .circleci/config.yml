@@ -299,11 +299,11 @@ jobs:
               exit 0
             else
               echo "Rolling Back"
-              exit 1
+              - revert-migrations
             fi
       - notify_on_failure
       - destroy_environment
-      - revert-migrations
+      # - revert-migrations
 
   cloudfront-update:
     docker:
